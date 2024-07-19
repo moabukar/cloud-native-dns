@@ -1,7 +1,6 @@
-# Cloud-native DNS setup
+# Cloud-native DNS setup (cert-manager, externalDNS, nginx ingress controller)
 
-
-Prerequisites:
+### Prerequisites:
 
 - AKS or EKS cluster or even GKE
 
