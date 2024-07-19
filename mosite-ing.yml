@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mosite-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "issuer"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: home.moabukar.co.uk
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mosite
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - home.moabukar.co.uk
+    secretName: home-tls

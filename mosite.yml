@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mosite-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mosite
+  template:
+    metadata:
+      labels:
+        app: mosite
+    spec:
+      containers:
+      - name: mosite-container
+        image: moabukar/mosite:faa82a2
+        ports:
+        - containerPort: 80
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mosite
+spec:
+  selector:
+    app: mosite
+  ports:
+  # - protocol: TCP
+  #   port: 8080
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: 80

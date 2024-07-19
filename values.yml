@@ -1,0 +1,11 @@
+provider:
+  name: cloudflare
+
+policy: sync # or upsert-only
+
+env:
+- name: CF_API_TOKEN
+  valueFrom:
+    secretKeyRef:
+      name: cloudflare-api-key
+      key: apiKey
