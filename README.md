@@ -1,4 +1,4 @@
-# Cloud-native DNS setup (cert-manager, externalDNS, nginx ingress controller)
+# Cloud-native DNS setup (cert-manager, externalDNS with Cloudflare, NGINX ingress controller)
 
 ### Prerequisites:
 
